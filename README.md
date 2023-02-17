@@ -8,4 +8,4 @@ simple search seed words
  
  can change .doc . xlsx to other or ad more on row 11
 
-after start you can input path or skip (press enter) for scan n all disc c
+after start you can input path or skip (press enter) for scan in all disc C
