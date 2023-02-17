@@ -4,6 +4,7 @@ from distutils.log import error
 import io
 import os
 import textract
+import re
 
 
 # можно юзать что угодно пока так для удобства разработки
@@ -13,9 +14,9 @@ counter = 0
 
 pathnameinp = input("Input path: ")
 if not pathnameinp:
-   fileNameOut ="C:\\"
-else: 
-   fileNameOut = str(pathnameinp)
+    fileNameOut = r"C:\\"
+else:
+    fileNameOut = str(pathnameinp)
 
 # функция сбора путей к файла и записи их в файл ТК либо я не вьехал в питон либо он не дружит со сложной рекурсией
 thisdir = os.getcwd()
@@ -27,7 +28,7 @@ with io.open("pathFile.txt", "w", encoding="utf-8", errors='ignore') as pathFile
             if os.path.splitext(file)[1] in fileTypes:
                 counter += 1
                 pathFile.write(os.path.join(r, file) + "\n")
-                #print(os.path.join(r, file), os.path.splitext(file))
+                # print(os.path.join(r, file), os.path.splitext(file))
 pathFile.close()
 
 
@@ -37,20 +38,26 @@ wordsF.close()
 
 counteWords = 0
 # функция чтения путей по к файлам
-print(f"All: {counter} files.")
-with io.open("pathFile.txt", 'r', encoding='utf8', errors='ignore') as f:
-    pathText = f.read().splitlines()
-    for path in pathText:
-        try:
+try:
+    print(f"All: {counter} files.")
+    with io.open("pathFile.txt", 'r', encoding='utf8', errors='ignore') as f:
+        pathText = f.read().splitlines()
+        for path in pathText:
             textfile = textract.process(path)
             # print (textfile)
             for word in wordList:
-                if  bytes(word, 'UTF-8') in textfile: 
-                    #print("serched: " +path + "  word: " + word)
-                    counteWords +=1
-            print (str(counteWords) + " SEED-word/s in file" + path)
+                if bytes(word, 'UTF-8') in textfile:
+                    seed = r"(" + word + r"(.+?)(?:\n|$|.{120}))"
+                    seedMass = re.findall(seed, str(textfile))
+                    #print(seed)
+                    #print(seedMass[0][0])
+                    counteWords += 1
+                    for word2 in wordList:
+                        if bytes(word2, 'UTF-8') in bytes(seedMass[0][0], 'UTF-8'):
+                            counteWords += 1
+                            print(str(counteWords) + " SEED-word/s in file" + path)
+                        break
 
             counteWords = 0
-        except:
-            print('error:' + str(error) + '\n'+ path)
-
+except:
+    print(str(error))
