@@ -1,6 +1,5 @@
-###BtcSearch
-```markdown
-# Project btcSearch
+
+### Project BtcSearch
 
 This project is designed to search for specific keywords in various types of files within the specified directory.
 
@@ -17,7 +16,6 @@ Before running the project, you need to install the following libraries using `p
 - `xlrd`
 - `chardet`
 
-```
 
 
 ```bash
