@@ -1,4 +1,4 @@
-
+###BtcSearch
 ```markdown
 # Project btcSearch
 
@@ -13,6 +13,9 @@ Before running the project, you need to install the following libraries using `p
 - `olefile`
 - `alive_progress`
 - `PyPDF2`
+
+```
+
 
 ```bash
 pip install python-docx openpyxl olefile alive_progress PyPDF2
@@ -43,28 +46,6 @@ The project searches for keywords in the following types of files:
 - Excel (.xls, .xlsx)
 - Text files (.txt)
 
-## File Processing
-
-The `search_words_in_files` script iterates through each file in the specified directory and looks for keywords. If words are found, it saves information about the file, the found words, and the context of their usage.
-
-```python
-def search_words_in_files(directory, word_list):
-    ...
-```
-
 ## Errors and Handling
 
-If errors occur during file processing, they will be printed to the console. The program will continue working with other files.
-
-```python
-except Exception as e:
-    print(f"Error processing file: {e}")
-```
-
-## Note
-
-Make sure you have necessary permissions to read files in the chosen directory.
-
-```
-
-This text provides users with instructions on installing necessary libraries, running the project, supported file formats, and error handling.
+If errors occur during file processing, they will be printe
