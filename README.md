@@ -13,12 +13,15 @@ Before running the project, you need to install the following libraries using `p
 - `olefile`
 - `alive_progress`
 - `PyPDF2`
+- `docx2txt`
+- `xlrd`
+- `chardet`
 
 ```
 
 
 ```bash
-pip install python-docx openpyxl olefile alive_progress PyPDF2
+pip install python-docx openpyxl olefile alive_progress PyPDF2 docx2txt xlrd chardet
 ```
 
 ## Running the Project
