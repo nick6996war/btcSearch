@@ -35,7 +35,7 @@ python btcSearch.py
 Example usage:
 
 ```bash
-Enter Directory: C:\\
+Enter Directory: C:\
 ```
 
 ## Supported File Formats
