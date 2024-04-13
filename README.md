@@ -1,4 +1,3 @@
-Sure, here's the Markdown text in English:
 
 ```markdown
 # Project btcSearch
