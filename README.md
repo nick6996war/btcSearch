@@ -38,7 +38,7 @@ Enter Directory: C:\
 ## File Prefixes and Their Meanings
 
 - Files with the prefix `_bin` execute binary search and do not require installation of any libraries, but they may provide less accurate results.
-- Files with the prefix `_12` perform a search for a range of 10 to 20 words for a cleaner search.
+- Files with the prefix `_12` perform a search for a range of 10 to 25 words for a cleaner search.
 
 ## Supported File Formats
 
