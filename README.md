@@ -26,7 +26,7 @@ pip install python-docx openpyxl olefile alive_progress PyPDF2 docx2txt xlrd cha
 2. **Run the script**: After entering the directory, execute the script.
 
 ```python
-py btcSearch.py
+python btcSearch.py
 ```
 
 Example usage:
@@ -34,6 +34,11 @@ Example usage:
 ```bash
 Enter Directory: C:\
 ```
+
+## File Prefixes and Their Meanings
+
+- Files with the prefix `_bin` execute binary search and do not require installation of any libraries, but they may provide less accurate results.
+- Files with the prefix `_12` perform a search for a range of 10 to 20 words for a cleaner search.
 
 ## Supported File Formats
 
@@ -48,4 +53,4 @@ The project searches for keywords in the following types of files:
 
 If errors occur during file processing, they will be printed.
 ```
-
+error filepath additional 
