@@ -26,7 +26,7 @@ pip install python-docx openpyxl olefile alive_progress PyPDF2 docx2txt xlrd cha
 2. **Run the script**: After entering the directory, execute the script.
 
 ```python
-python btcSearch.py
+py btcSearch.py
 ```
 
 Example usage:
